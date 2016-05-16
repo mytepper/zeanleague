@@ -27,24 +27,31 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->Html->script('js/lib/require', array(
-			'data-main' => 'js/config'
+		echo $this->fetch('script');
+		echo $this->Html->script('app/require', array(
+			'data-main' => 'js/app'
 		));
 	?>
 </head>
-<body>
-	<div id="container">
-		<div id="content">
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
 
+		<?php echo $this->element('layouts/header');?>
+
+		<!-- =============================================== -->
+
+		<?php echo $this->element('menus/admin');?>
+
+		<!-- =============================================== -->
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
 			<?php echo $this->Flash->render(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
+		<!-- /.content-wrapper -->
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>

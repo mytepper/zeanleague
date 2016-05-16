@@ -12,4 +12,8 @@ class TeamTypesController extends AppController {
  */
 	public $scaffold;
 
+	public function index() {
+		
+	}
+
 }
