@@ -19,8 +19,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
 <html>
+<base href="<?php echo Router::url('/');?>">
 <head>
-	<?php echo $this->Html->charset(); ?>
+	<?php echo $this->Html->charset('UTF-8'); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
@@ -30,9 +31,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-		echo $this->Html->script('app/require', array(
+		echo $this->Html->script('lib/require', array(
 			'data-main' => 'js/app'
 		));
+		echo $this->Html->css('bootstrap', array('inline' => true));
+		echo $this->Html->css('AdminLTE', array('inline' => true));
+		echo $this->Html->css('_all-skins', array('inline' => true));
+		echo $this->Html->css('style', array('inline' => true));
+
 	?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
