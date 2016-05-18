@@ -38,6 +38,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('AdminLTE', array('inline' => true));
 		echo $this->Html->css('_all-skins', array('inline' => true));
 		echo $this->Html->css('style', array('inline' => true));
+		echo $this->Html->css('font-awessome', array('inline' => true));
 
 	?>
 </head>

@@ -4,7 +4,7 @@ define(["jquery"], function($) {
 	}
 
 	var simple = function() {
-		console.log('dsfsdf');
+
 	}
 	return module();
 
