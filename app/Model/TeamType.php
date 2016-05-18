@@ -33,7 +33,12 @@ class TeamType extends AppModel {
                 'rule' => 'notBlank',
                 'required' => false,
                 'message' => 'Plase enter name.'
-            )
+            ),
+			'isUnique' => array(
+				'rule' => 'isUnique',
+                'required' => false,
+                'message' => 'Name isUnique.'
+			)
         ),
 		'country' => array(
             'notBlank' => array(
