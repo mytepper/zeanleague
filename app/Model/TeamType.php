@@ -31,13 +31,13 @@ class TeamType extends AppModel {
 		'name' => array(
             'notBlank' => array(
                 'rule' => 'notBlank',
-                'required' => false,
-                'message' => 'Plase enter name.'
+                'required' => true,
+                'message' => 'กรุณากรอกชื่อ.'
             ),
 			'isUnique' => array(
 				'rule' => 'isUnique',
-                'required' => false,
-                'message' => 'Name isUnique.'
+                'required' => true,
+                'message' => 'มีข้อมูลชื่อนี้อยู่แล้ว.'
 			)
         ),
 		'country' => array(
@@ -71,6 +71,20 @@ class TeamType extends AppModel {
  */
 	public function saveTeamType($data) {
 		return $this->save($data);
+	}
+
+/**
+ * [getTeamTypeLists]
+ * @method getTeamTypeLists
+ * @return array list
+ */
+	public function getTeamTypeLists() {
+		return $this->find('list', array(
+			'fields' => array(
+				'TeamType.id',
+				'TeamType.name',
+			)
+		));
 	}
 
 }

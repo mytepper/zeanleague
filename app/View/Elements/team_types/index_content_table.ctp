@@ -12,11 +12,11 @@
 	<?php if ($teamTypes) :?>
 		<?php foreach ($teamTypes as $key => $value) : ?>
 			<tr>
-				<td><?php echo h($value['TeamType']['id']);?></td>
+				<td><?php echo $value['TeamType']['id'];?></td>
 				<td><?php echo h($value['TeamType']['name']);?></td>
-				<td><?php echo h($value['TeamType']['country']);?></td>
-				<td><?php echo h($value['TeamType']['leage']);?></td>
-				<td><?php echo h($value['TeamType']['division']);?></td>
+				<td><?php echo ($value['TeamType']['country']) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-remove text-danger"></i>';?></td>
+				<td><?php echo ($value['TeamType']['leage']) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-remove text-danger"></i>';?></td>
+				<td><?php echo ($value['TeamType']['division']) ? $value['TeamType']['division'] : '<i class="fa fa-remove text-danger"></i>';?></td>
 				<td>
 					<?php echo $this->Html->link('<i class="fa fa-pencil"></i>', '/team_types/edit/' . $value['TeamType']['id'], array(
 						'class' => 'btn btn-success',

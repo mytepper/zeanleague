@@ -31,4 +31,14 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+/**
+ * [__setJsonResponse]
+ * @method __setJsonResponse
+ * @param json response
+ */
+	public function __setJsonResponse($array) {
+		$this->set('json', $array);
+		$this->set('_serialize', array('json'));
+	}
 }

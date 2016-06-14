@@ -43,7 +43,13 @@ class PagesController extends AppController {
  * @return void
  * @throws NotFoundException When the view file could not be found
  *	or MissingViewException in debug mode.
+ *
  */
+
+	public function index() {
+		
+	}
+
 	public function display() {
 		$path = func_get_args();
 

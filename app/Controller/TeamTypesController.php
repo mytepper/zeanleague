@@ -7,7 +7,6 @@ class TeamTypesController extends AppController {
 
 	public $components = array('RequestHandler', 'Flash', 'Paginator');
 
-
 /**
  * [index view data table]
  * @method index
@@ -22,7 +21,7 @@ class TeamTypesController extends AppController {
 			);
 		}
 		$this->paginate = array(
-	        'limit' => 5,
+	        'limit' => 20,
 			'conditions' => $conditions,
 	        'order' => array('id' => 'desc')
 	    );
@@ -40,10 +39,10 @@ class TeamTypesController extends AppController {
 		if ($this->request->is('post')) {
 			$saved = $this->TeamType->saveTeamType($this->request->data);
 			if ($saved) {
-				$this->Flash->success('The data was saved successfully.', array('key' => 'team_types'));
+				$this->Flash->success('บันทึกข้อมูลแล้ว.', array('key' => 'team_types'));
 				$this->redirect('/team_types/add');
 			} else {
-				$this->Flash->errors('Can\'t save data.', array('key' => 'team_types'));
+				$this->Flash->errors('ไม่สามารถเพิ่มข้อมูลได้.', array('key' => 'team_types'));
 			}
 		}
 	}
@@ -60,10 +59,10 @@ class TeamTypesController extends AppController {
 		if ($this->request->is('put')) {
 			$saved = $this->TeamType->saveTeamType($this->request->data);
 			if ($saved) {
-				$this->Flash->success('The data was updated successfully.', array('key' => 'team_types'));
+				$this->Flash->success('อัพเดทข้อมูลแล้ว.', array('key' => 'team_types'));
 				$this->redirect('/team_types/edit/' . $id);
 			} else {
-				$this->Flash->errors('The data can\'t update.', array('key' => 'team_types'));
+				$this->Flash->errors('อัพเดทข้อมูลไม่ได้.', array('key' => 'team_types'));
 			}
 		} else {
 			$this->request->data = $teamType;

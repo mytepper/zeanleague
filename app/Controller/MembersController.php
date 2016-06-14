@@ -5,11 +5,15 @@ App::uses('AppController', 'Controller');
  */
 class MembersController extends AppController {
 
-/**
- * Scaffold
- *
- * @var mixed
- */
-	public $scaffold;
+public $components = array('RequestHandler', 'Flash', 'Paginator');
 
+/**
+ * [register public page]
+ *
+ * @method register
+ * @return void
+ */
+	public function register() {
+		
+	}
 }

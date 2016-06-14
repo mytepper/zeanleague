@@ -31,4 +31,16 @@ App::uses('Model', 'Model');
  */
 class AppModel extends Model {
 
+/**
+ * [renameFile rename file upload]
+ * @method renameFile
+ * @param string $currentName file upload name
+ * @return new file name
+ */
+	public function __renameFile($field, $currentName, $data, $options) {
+		$ext = @end(explode('.', $currentName));
+		$newFileName = md5(microtime());
+		return $newFileName . '.' . $ext;
+	}
+
 }
